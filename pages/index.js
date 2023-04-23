@@ -12,30 +12,40 @@ class Home extends Component
   constructor(props)
   {
     super(props);
+    this.handleMoveToSection = this.handleMoveToSection.bind(this);
   }
   
+  handleMoveToSection(section, e)
+  {
+    e.preventDefault();
+    fullpage_api.moveTo(section);
+  }
+
   render()
   {
     return(
       <main>
-        <Nav />
+        <Nav moveSection={this.handleMoveToSection}/>
         <ReactFullpage
-        scrollingSpeed = {1000} /* Options here */
+        scrollingSpeed = {700}
+        anchors={['homeAnchor', 'aboutAnchor', 'expertiseAnchor', 'projectsAnchor', 'contactAnchor']}
+        menu='myMenu'
+        navigation
+        showActiveTooltip
         render={({ state, fullpageApi }) => 
         {
           return (
-          <ReactFullpage.Wrapper>
-            <Hero />
-            <About />
-            <Expertise />
-            <Projects />
-            <Contact />
-          </ReactFullpage.Wrapper>
-      );
-    }}
-  />
+            <ReactFullpage.Wrapper>
+              <Hero />
+              <About />
+              <Expertise />
+              <Projects />
+              <Contact />
+            </ReactFullpage.Wrapper>
+          );
+        }}
+        />
       </main>
-      
     );
   }
 }

@@ -10,8 +10,14 @@ class Contact extends Component
     render()
     {
         return(
-            <section  className="section flex h-screen justify-center items-center">
-                <h1>THIS IS CONTACT</h1>
+            <section id="contact" className="section items-center p-12">
+                    <h2 className="text-5xl text-center m-10">CONTACT ME</h2>
+                    <div className="text-center">
+                        <p>
+                            Hello, this is about me Hello, this is about me Hello, this is about me Hello, this is about me Hello, this is about me
+                            Hello, this is about me Hello, this is about me Hello, this is about me Hello, this is about me
+                        </p>
+                    </div>
             </section>
         );
     }
