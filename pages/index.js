@@ -32,6 +32,7 @@ class Home extends Component
         menu='myMenu'
         navigation
         showActiveTooltip
+        licenseKey='none'
         render={({ state, fullpageApi }) => 
         {
           return (
