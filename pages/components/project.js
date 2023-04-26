@@ -1,5 +1,6 @@
 import { Component } from "react";
 import ProjectCard from './projectCard';
+import Carousel from "./carousel";
 
 class Projects extends Component
 {
@@ -18,8 +19,9 @@ class Projects extends Component
                             This is a collection of projects that I have worked on, both personal and at school. You can find all my projects on my github.
                         </p>
                         <section className="flex justify-center items-center p-4 pt-10 h-500 gap-4">
-                            <ProjectCard />
-                            <ProjectCard />
+                            {/* <ProjectCard />
+                            <ProjectCard /> */}
+                            <Carousel />
                         </section>
                     </div>
             </section>

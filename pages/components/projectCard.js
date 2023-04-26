@@ -12,13 +12,10 @@ class ProjectCard extends Component
     render()
     {
         return(
-            <figure className='flex flex-col p-6 bg-neutral-200 rounded-sm shadow-md w-4/5 h-500 justify-center items-center max-w-md'>
+            <figure className='flex flex-col bg-neutral-200 rounded-sm shadow-md h-500 justify-center items-center min-w-full'>
                 <Image width={400} alt="thumbnail image" src={img}/>
-                <p className="w-full mb-5">This is a project card.</p>
-                <figcaption className="text-justify">
-                    This is the project description.
-                    This is the project description.
-                    This is the project description.
+                <figcaption className="p-4 bg-white w-full">
+                    {this.props.title}
                 </figcaption>
             </figure>
         );
