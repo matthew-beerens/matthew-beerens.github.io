@@ -6,13 +6,38 @@ class Carousel extends Component
     constructor(props)
     {
         super(props);
+        this.previous = this.previous.bind(this);
+        this.next = this.next.bind(this);
+        this.state = {
+            "projects": [<ProjectCard title="project 1" />,
+            <ProjectCard title="project 2"/>,
+            <ProjectCard title="project 3"/>],
+        } 
+    }
+
+    next()
+    {
+        const card = this.state.projects.shift();
+        this.state.projects.push(card);
+        this.setState({
+            'projects': this.state.projects,
+        });
+    }
+
+    previous()
+    {
+        const card = this.state.projects.pop()
+        this.state.projects.unshift(card);
+        this.setState({
+            'projects': this.state.projects,
+        });
     }
 
     render()
     {
         return (
             <section className="flex p-4 gap-4 justify-center items-center">
-                <aside id="left-arrow" className="flex  grow justify-center" >
+                <aside id="left-arrow" className="flex  grow justify-center" onClick={this.previous}>
                     <div className="w-0 h-0 
                             border-t-[20px] border-t-transparent
                             border-r-[35px] border-r-neutral-500
@@ -20,12 +45,10 @@ class Carousel extends Component
                 </aside>
 
                 <main id="slider" className="flex p-4 gap-3 overflow-hidden w-1/2">
-                    <ProjectCard title="project 1"/>
-                    <ProjectCard title="project 2"/>
-                    <ProjectCard title="project 3"/>
+                    {this.state.projects[0]}
                 </main>
 
-                <aside id="right-arrow" className="flex grow justify-center">   
+                <aside id="right-arrow" className="flex grow justify-center" onClick={this.next}>   
                     <div className="w-0 h-0 
                         border-t-[20px] border-t-transparent
                         border-l-[35px] border-l-neutral-500
