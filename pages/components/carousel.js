@@ -44,7 +44,7 @@ class Carousel extends Component
                             border-b-[20px] border-b-transparent rounded-sm"></div>                                    
                 </aside>
 
-                <main id="slider" className="flex p-4 gap-3 overflow-hidden w-1/2">
+                <main id="slider" className="flex p-4 gap-3 overflow-hidden w-full">
                     {this.state.projects[0]}
                 </main>
 
