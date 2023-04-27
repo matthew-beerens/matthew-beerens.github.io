@@ -9,9 +9,7 @@ class Carousel extends Component
         this.previous = this.previous.bind(this);
         this.next = this.next.bind(this);
         this.state = {
-            "projects": [<ProjectCard title="project 1" />,
-            <ProjectCard title="project 2"/>,
-            <ProjectCard title="project 3"/>],
+            "projects": this.props.projects,
         } 
     }
 

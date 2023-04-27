@@ -7,6 +7,9 @@ class Projects extends Component
     constructor(props)
     {
         super(props);
+        this.state = {
+            'projects': [<ProjectCard title="project 1" />, <ProjectCard title="project 2"/>, <ProjectCard title="project 3"/>],
+        }
     }
 
     render()
@@ -19,9 +22,7 @@ class Projects extends Component
                             This is a collection of projects that I have worked on, both personal and at school. You can find all my projects on my github.
                         </p>
                         <section className="flex justify-center items-center p-4 pt-10 h-500 gap-4">
-                            {/* <ProjectCard />
-                            <ProjectCard /> */}
-                            <Carousel />
+                            <Carousel projects={this.state.projects}/>
                         </section>
                     </div>
             </section>
