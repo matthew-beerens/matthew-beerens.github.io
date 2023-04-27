@@ -8,7 +8,7 @@ class Projects extends Component
     {
         super(props);
         this.state = {
-            'projects': [<ProjectCard title="project 1" />, <ProjectCard title="project 2"/>, <ProjectCard title="project 3"/>],
+            'projects': [<ProjectCard title="Shoppy" />, <ProjectCard title="1ntm41n Cyber Blog"/>, <ProjectCard title="Huf Compressor"/>, <ProjectCard title="Cmakeproject"/>],
         }
     }
 
